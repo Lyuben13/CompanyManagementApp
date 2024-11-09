@@ -1,0 +1,36 @@
+<OrgChart>:
+    ScrollView:
+        BoxLayout:
+            id: employee_container
+            orientation: 'vertical'
+            padding: 10
+            spacing: 10
+
+<EmployeeCard>:
+    orientation: 'vertical'
+    size_hint: None, None
+    size: 150, 200
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10]
+
+<Sidebar>:
+    Label:
+        text: "Company Name"
+        font_size: 24
+        size_hint_y: None
+        height: 50
+    Button:
+        text: "Org Chart"
+        size_hint_y: None
+        height: 40
+        on_press: root.show_org_chart(self)
+    Button:
+        text: "About"
+        size_hint_y: None
+        height: 40
+        on_press: root.show_about(self)
